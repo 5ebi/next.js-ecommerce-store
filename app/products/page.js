@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import Link from 'next/link';
+import styles from './page.module.scss';
 
 export const metadata = {
   title: 'Products',
@@ -7,12 +9,47 @@ export const metadata = {
 
 export default function Products() {
   return (
-    <div>
-      <h1>Our Products</h1>
-      <Link href="/">Home</Link>
-      <Link href="/contact">Contact</Link>
-      <Link href="/products">Products</Link>
-      <Link href="/cart">Cart</Link>
-    </div>
+    <main>
+      <div>
+        <h1>Products</h1>
+      </div>
+      <div className={styles.wrapperProducts}>
+        <div className={styles.wrapperProduct}>
+          <h2>Profitec Go</h2>
+          <p> The Go is an outstanding price / value model.</p>
+          <div style={{ padding: '0rem' }}>
+            <Link
+              href="/products/profitecGo"
+              legacyBehavior
+              data-test-id="profitecGO-0001"
+            >
+              <Image
+                src="/images/profitecgo/go-black.jpg"
+                width={574}
+                height={540}
+                alt="Picture of Profitec Go Black"
+              />
+            </Link>
+          </div>
+        </div>
+        <div>
+          <h2>Profitec Go</h2>
+          <div style={{ padding: '0rem' }}>
+            <Link
+              href="/products/profitecGo"
+              legacyBehavior
+              data-test-id="profitecGO-0001"
+            >
+              <Image
+                src="/images/profitecgo/go-black.jpg"
+                width={574}
+                height={540}
+                alt="Picture of Profitec Go Black"
+              />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }

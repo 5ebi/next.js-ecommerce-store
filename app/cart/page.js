@@ -7,14 +7,12 @@ export const metadata = {
 
 export default function Cart() {
   return (
-    <div>
-      <h1>Shopping Cart</h1>
+    <main>
       <div>
-        <Link href="/">Home</Link>
-        <Link href="/contact">Contact</Link>
-        <Link href="/products">Products</Link>
-        <Link href="/cart">Cart</Link>
+        <h1>Cart</h1>
       </div>
-    </div>
+
+      <Link href="/cart/checkout">Checkout</Link>
+    </main>
   );
 }

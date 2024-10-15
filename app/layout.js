@@ -1,28 +1,23 @@
-import './globals.css';
-import localFont from 'next/font/local';
-
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
-});
-const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
-});
+import './globals.scss';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 export const metadata = {
   title: {
-    default: 'Siebträgershop',
+    default: 'Siebträgerhop',
     template: '%s | Siebträgershop',
   },
 };
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body>
+        <div className="layout-container">
+          <Header />
+          <main className="content">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

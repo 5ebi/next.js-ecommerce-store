@@ -1,15 +1,48 @@
 .wrapperProducts {
-  background-color: var(--sblue);
-  width: 800px;
+  // background-color: var(--sblue);
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8rem;
 }
 
 .wrapperProduct {
-  background-color: rgb(91, 146, 195);
-  padding: 1rem;
+  margin: 2rem;
+  padding: 0;
   display: flex;
   flex-direction: row-reverse;
+  min-width: 473px;
+}
+
+.wrapperProduct:hover {
+  opacity: 0.9;
+  transition: 1s;
+}
+
+.wrapperProductInfo {
+  background-color: var(--sblue);
+  display: flex;
+  flex-direction: column;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+// .wrapperProductInfo:hover {
+//   background-color: rgba(8, 8, 217, 0.9);
+// }
+
+.buttonLearnMore {
+  background-color: white; /* Green */
+  border: none;
+  color: rgb(0, 0, 0);
+
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  width: 10rem;
+  text-decoration: none;
+  margin-top: auto;
+  margin-bottom: 1rem;
+  font-family: BLMelodyMono, monospace;
+  font-weight: 500;
+  align-self: center;
 }

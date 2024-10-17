@@ -234,6 +234,7 @@ h3 {
   font-weight: 500; /* Use the bold version */
   font-size: 1.2rem;
   opacity: 0.6;
+  margin-bottom: 1rem;
 }
 
 .button1 {
@@ -248,10 +249,10 @@ h3 {
 .mainWrapper {
   max-width: 1200px;
 }
-p {
-  line-height: 1.6;
-  font-size: 20px;
-}
+// p {
+//   line-height: 1.6;
+//   font-size: 20px;
+// }
 
 span {
   display: block;
@@ -271,4 +272,9 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Align content at the top */
+}
+
+/* lets the image render without an little border below */
+img {
+  vertical-align: middle;
 }

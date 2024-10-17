@@ -14,41 +14,27 @@ export default function Products() {
         <h1>Products</h1>
       </div>
       <div className={styles.wrapperProducts}>
-        <div className={styles.wrapperProduct}>
-          <h2>Profitec Go</h2>
-          <p> The Go is an outstanding price / value model.</p>
-          <div style={{ padding: '0rem' }}>
-            <Link
-              href="/products/profitecGo"
-              legacyBehavior
-              data-test-id="profitecGO-0001"
-            >
+        <Link href="/products/profitecGo" data-test-id="profitecGO-0001">
+          <div className={styles.wrapperProduct}>
+            <div className={styles.wrapperProductInfo}>
+              <h2>Profitec Go</h2>
+              <h3>Our bestseller </h3>
+              <p> The Go is an outstanding price / value model.</p>
+              <p> lorem ipsum.</p>
+
+              <button className={styles.buttonLearnMore}>Add to Cart</button>
+            </div>
+            <div>
               <Image
                 src="/images/profitecgo/go-black.jpg"
-                width={574}
-                height={540}
+                width={473}
+                height={440}
                 alt="Picture of Profitec Go Black"
+                // style={imageStyle}
               />
-            </Link>
+            </div>
           </div>
-        </div>
-        <div>
-          <h2>Profitec Go</h2>
-          <div style={{ padding: '0rem' }}>
-            <Link
-              href="/products/profitecGo"
-              legacyBehavior
-              data-test-id="profitecGO-0001"
-            >
-              <Image
-                src="/images/profitecgo/go-black.jpg"
-                width={574}
-                height={540}
-                alt="Picture of Profitec Go Black"
-              />
-            </Link>
-          </div>
-        </div>
+        </Link>
       </div>
     </main>
   );

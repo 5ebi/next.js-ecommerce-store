@@ -3,7 +3,7 @@ import styles from './header.module.scss';
 
 export default function Header() {
   return (
-    <header>
+    <header style={{ backgroundColor: 'var(--sblue)' }}>
       <nav>
         <ul className={styles.headerstyle}>
           <li>
@@ -18,7 +18,7 @@ export default function Header() {
             <Link href="/products">Products</Link>
           </li>
 
-          <li style={{ justifyContent: 'flex-end' }}>
+          <li style={{ alignSelf: 'flex-end', marginLeft: 'auto' }}>
             <Link href="/cart">Cart</Link>
           </li>
         </ul>

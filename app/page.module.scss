@@ -3,51 +3,16 @@
   position: relative;
   z-index: 2;
   font-family: BLMelody, sans-serif;
-  font-weight: 700; /* Use the bold version */
-  font-size: 7rem;
-}
-
-.h1blue {
-  width: 900px;
-  text-align: center;
-  position: absolute;
-  top: 0;
-  left: 50%; /* Start from the center */
-  transform: translate(-50%); /* Center horizontally, slight vertical offset */
-  z-index: 1;
-  font-family: BLMelody, sans-serif;
   font-weight: 700;
   font-size: 7rem;
-
-  color: var(--sblue);
-  opacity: 0.5;
-  transition:
-    transform 1s,
-    font-size 0.8s;
+  width: fit-content; /* Shrinks the width to the content */
+  margin: 0 auto;
+  /* Transition on initial state */
+  transition: 0.3s;
 }
 
-.h1:hover + .h1blue {
-  font-size: 7.2rem; /* Increase font size on hover */
-  transform: translate(-50%); /* Adjust the vertical position slightly */
-}
+.h1:hover {
+  color: var(--sblack);
 
-.overlaph1container {
-  position: relative; /* This makes the container a reference for absolute positioning */
-}
-
-.h2 {
-  text-align: center;
-
-  font-family: BLMelodyMono, sans-serif;
-  font-weight: 300; /* Use the bold version */
-  font-size: 2.2rem;
-}
-
-.h3 {
-  text-align: center;
-
-  font-family: BLMelodyMono, sans-serif;
-  font-weight: 500; /* Use the bold version */
-  font-size: 1.2rem;
-  opacity: 0.6;
+  /* Reverse the transition timing when hovered */
 }

@@ -2,6 +2,10 @@
   --background: #ffffff;
   --foreground: #171717;
   --sblue: rgb(8, 8, 217);
+  --swhite: rgb(170, 170, 247);
+  --swhite2: rgb(196, 196, 247);
+  --swhite3: rgb(228, 228, 247);
+  --sblack: rgb(6, 6, 23);
 }
 
 /* BLMelody Fonts */
@@ -207,6 +211,7 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: var(--swhite);
 }
 
 h1 {
@@ -217,6 +222,7 @@ h1 {
   font-weight: 700; /* Use the bold version */
   font-size: 6rem;
   padding-bottom: 1rem;
+  color: var(--swhite2);
 }
 
 h2 {
@@ -225,6 +231,7 @@ h2 {
   font-family: BLMelody, sans-serif;
   font-weight: 700; /* Use the bold version */
   font-size: 3rem;
+  color: var(--swhite);
 }
 
 h3 {
@@ -235,6 +242,7 @@ h3 {
   font-size: 1.2rem;
   opacity: 0.6;
   margin-bottom: 1rem;
+  color: var(--swhite);
 }
 
 .button1 {
@@ -248,13 +256,24 @@ h3 {
 
 .mainWrapper {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+  margin: 2rem auto;
+  padding: 3rem;
+  background-color: #171717c0;
+
+  /* Gradient Background Fading */
+  //   background: linear-gradient(
+  //     to top,
+  //     rgba(0, 0, 0, 0) 5%,
+
+  //     rgba(255, 255, 255, 0.05) 10%,
+  //     rgba(255, 255, 255, 0.05) 90%,
+  //     rgba(0, 0, 0, 0) 95%
+  //   );
+  // }
+  // p {
+  //   line-height: 1.6;
+  //   font-size: 20px;
 }
-// p {
-//   line-height: 1.6;
-//   font-size: 20px;
-// }
 
 span {
   display: block;
@@ -274,9 +293,35 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: flex-start; /* Align content at the top */
+  background-color: var(--sblue);
 }
 
 /* lets the image render without an little border below */
 img {
   vertical-align: middle;
+}
+
+.hero-content {
+  padding: 0;
+  opacity: 1;
+}
+
+ul {
+  list-style-type: none;
+  color: var(--swhite);
+}
+
+/* Target all SVGs globally and set default fill color */
+svg {
+  fill: black; /* Default color */
+  transition: fill 0.2s ease; /* Smooth transition on hover */
+}
+
+/* Change color on hover for all SVGs */
+a:hover svg {
+  fill: var(--swhite); /* Hover color */
+}
+
+p {
+  color: var(--swhite);
 }

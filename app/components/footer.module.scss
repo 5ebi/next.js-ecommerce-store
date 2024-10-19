@@ -2,21 +2,28 @@
   display: flex;
   justify-content: space-evenly;
   background-color: var(--sblue);
-  //   padding-left: 3rem;
-  //   padding-right: 3rem;
-  //   padding-top: 0.1rem;
-  //   padding-bottom: 0.1rem;
-  //   margin-top: 26rem;
-  //   width: clamp(800px, 100vw, 5000px);
 }
 
 .ul {
   display: flex;
   margin: 1rem;
+  flex-direction: row;
+}
+
+.ul2 {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .footer {
   display: flex;
   position: fixed;
   bottom: 0;
+}
+
+.svg {
+  color: var(--swhite);
 }

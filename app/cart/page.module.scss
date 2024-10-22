@@ -1,3 +1,15 @@
+.Checkout {
+  padding: 1rem 2rem 1rem 2rem;
+  background-color: var(--swhite);
+  color: var(--sblack);
+  border-radius: 10rem;
+}
+
+.Checkout:hover {
+  color: var(--syellow);
+  background-color: var(--sblack);
+}
+
 .wrapperProducts {
   width: 100vw;
   display: flex;

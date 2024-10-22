@@ -1,11 +1,12 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --sblue: rgb(8, 8, 217);
+  --background: rgb(74, 73, 76);
+  // --foreground: rgb(8, 8, 217);
+  --sblue: rgb(74, 73, 76);
+  --sblue2: rgb(54, 53, 56);
   --swhite: rgb(228, 228, 247);
   --swhite2: rgb(215, 215, 247);
   --swhite3: rgb(197, 197, 247);
-  --sblack: rgb(6, 6, 36);
+  --sblack: rgb(10, 10, 24);
   --syellow: #d9d908;
 }
 
@@ -153,7 +154,6 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
     --foreground: #ededed;
   }
 }
@@ -174,6 +174,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  padding-top: 100px;
 }
 
 * {
@@ -199,7 +200,7 @@ body {
   flex-direction: column;
 
   max-width: 1200px;
-  min-width: 600px;
+  min-width: 500px;
 }
 
 main {
@@ -256,7 +257,6 @@ h3 {
   max-width: 1200px;
   margin: 2rem auto;
   padding: 3rem;
-  background-color: var(--sblack);
 
   /* Gradient Background Fading */
   //   background: linear-gradient(
@@ -282,11 +282,12 @@ h3 {
 .layout-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Full height of the viewport */
+  height: 100vh; /* Full height of the viewport */
 }
 
 /* Make main content grow to fill available space */
 .content {
+  // height: 100vw;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
@@ -297,11 +298,6 @@ h3 {
 /* lets the image render without an little border below */
 img {
   vertical-align: middle;
-}
-
-.hero-content {
-  padding: 0;
-  opacity: 1;
 }
 
 ul {
@@ -322,19 +318,35 @@ a {
   color: inherit;
   text-decoration: none;
   transition: 0.2s ease;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 // a:hover {
 //   color: var(--sblack);
 // }
-// // li {
-//   transition: 1s;
-//   font-size: 1.1rem;
+li {
+  font-size: 1rem;
+}
 
 //   color: var(--syellow);
 // }
 
-// li:hover {
-//   color: var(--sblack);
-// }
+li:hover {
+  // color: var(--swhite);
+  text-shadow:
+    0 0 10px var(--swhite2),
+    0 0 20px var(--swhite2);
+}
+
+/* Default Header Style */
+#header {
+  transition: background-color 0.5s ease;
+  position: sticky;
+  top: 0;
+  z-index: 100; /* Keep the header on top of other elements */
+}
+
+/* Header Background when Scrolled */
+#header:not(:hover) {
+  background-color: var(--sblack); /* Change this to the desired color */
+}

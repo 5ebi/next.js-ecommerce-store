@@ -1,10 +1,13 @@
 import Image from 'next/image';
-import { notFound } from 'next/navigation'; // Use notFound to handle 404
-import productList from '../../data'; // Update the path if necessary
+import { notFound } from 'next/navigation';
+import AddToCartButton from '../../components/AddButton';
+import productList from '../../data';
+
+// import styles from './page.module.scss';
 
 // This function runs on the server to fetch product data based on the dynamic route parameter
-export default function ProductPage({ params }) {
-  const { id } = params;
+export default async function ProductPage({ params }) {
+  const { id } = await params;
 
   // Find the product based on the dynamic ID (which is brand + model)
   const product = productList.find(
@@ -31,6 +34,12 @@ export default function ProductPage({ params }) {
         alt={`${product.brand} ${product.model}`}
       />
       <p>This is a great choice for coffee enthusiasts.</p>
+
+      {/* Pass productId to AddToCartButton */}
+      <AddToCartButton
+        productId={product.id}
+        productName={`${product.brand} ${product.model}`}
+      />
     </main>
   );
 }

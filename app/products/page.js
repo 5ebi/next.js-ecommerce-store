@@ -14,35 +14,14 @@ export default function Products() {
       <div>
         <h1 style={{ marginBottom: '4rem' }}>Products</h1>
       </div>
-
-      <div>
-        <div className={styles.wrapperProducts}>
-          {productList.map((product) => (
+      <div className={styles.wrapperProducts}>
+        {productList.map((product) => (
+          <div className={styles.wrapperProduct} key={`products-${product.id}`}>
+            {/* Make the image clickable by wrapping only the image in the Link */}
             <Link
               href={`/products/${product.brand.replace(/\s+/g, '').toLowerCase()}-${product.model.replace(/\s+/g, '').toLowerCase()}`}
-              key={`products-${product.id}`}
-              data-test-id={`${product.model.replace(/\s+/g, '')}-${product.id}`}
             >
-              <div className={styles.wrapperProduct}>
-                <div className={styles.wrapperProductInfo}>
-                  <h2
-                  // style={{
-                  //   display: 'flex',
-                  //   flexDirection: 'row',
-                  //   gap: '1rem',
-                  // }}
-                  >
-                    <span className={styles.brand}>{product.brand} </span>
-                    <span className={styles.model}>{product.model}</span>
-                  </h2>
-                  <h3>Price: ${product.price}</h3>
-                  <div className={styles.wrapperProductInfoText}>
-                    <p>{product.shortDescription}</p>
-                    <button className={styles.buttonLearnMore}>
-                      Learn More
-                    </button>
-                  </div>
-                </div>
+              <div className={styles.imageContainer}>
                 <div className={styles.imageSize}>
                   <Image
                     src={product.colors[0].image} // Display the first color's image
@@ -59,8 +38,28 @@ export default function Products() {
                 </div>
               </div>
             </Link>
-          ))}
-        </div>
+
+            {/* Non-clickable product information */}
+            <div className={styles.wrapperProductInfo}>
+              <h2>
+                <span className={styles.brand}>{product.brand} </span>
+                <br />
+                <span className={styles.model}>{product.model}</span>
+              </h2>
+              <h3 style={{ marginTop: '1rem' }}>Price: ${product.price}</h3>
+              <div className={styles.wrapperProductInfoText}>
+                <p>{product.shortDescription}</p>
+
+                {/* Make only the Learn More button clickable */}
+                <Link
+                  href={`/products/${product.brand.replace(/\s+/g, '').toLowerCase()}-${product.model.replace(/\s+/g, '').toLowerCase()}`}
+                >
+                  <div className={styles.buttonLearnMore}>Learn More</div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
       <span style={{ marginBottom: '8rem' }} />
     </main>

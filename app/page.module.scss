@@ -16,3 +16,20 @@
 
   /* Reverse the transition timing when hovered */
 }
+
+.button {
+  padding: 1.5rem;
+  background-color: black;
+  width: 22rem;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+  justify-self: center;
+  margin: auto;
+  border-radius: 10rem;
+  transition: ease 0.5s;
+}
+
+.button:hover {
+  padding: 2rem;
+}

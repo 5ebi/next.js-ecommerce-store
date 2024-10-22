@@ -29,7 +29,7 @@ export default function Header() {
             <Link href="/cart">
               <div
                 style={{
-                  border: '4px solid var(--syellow)',
+                  border: '3px solid var(--syellow)',
                   borderRadius: '100rem',
                   padding: '0.5rem',
                   display: 'flex', // Flexbox for centering content inside the div
@@ -39,8 +39,8 @@ export default function Header() {
                   version="1.0"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
-                  width="2.2rem"
-                  height="2.2rem"
+                  width="2rem"
+                  height="2rem"
                   viewBox="0 0 512.000000 512.000000"
                   preserveAspectRatio="xMidYMid meet"
                 >

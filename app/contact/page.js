@@ -7,10 +7,13 @@ export default function Contact() {
   return (
     <main>
       <div>
-        <h2>Contact</h2>
+        <h1>Contact</h1>
       </div>
       <div>
-        <h3>If you have questions about our machines contact us</h3>
+        <h3>
+          If you have questions about our machines or service of them contact us
+          here anytime!
+        </h3>
       </div>
     </main>
   );

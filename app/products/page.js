@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import productList from '../data';
 import styles from './page.module.scss';
 
 export const metadata = {
@@ -11,55 +12,57 @@ export default function Products() {
   return (
     <main>
       <div>
-        <h1>Products</h1>
-      </div>
-      <div className={styles.wrapperProducts}>
-        <Link href="/products/profitecGo" data-test-id="profitecGO-0001">
-          <div className={styles.wrapperProduct}>
-            <div className={styles.wrapperProductInfo}>
-              <h2>Profitec Go</h2>
-              <h3>Our bestseller </h3>
-              <p> The Go is an outstanding price / value model.</p>
-              <p> lorem ipsum.</p>
-
-              {/* <button className={styles.buttonLearnMore}>Add to Cart</button> */}
-            </div>
-            <div>
-              <Image
-                src="/images/profitecgo/go-black.jpg"
-                width={473}
-                height={440}
-                alt="Picture of Profitec Go Black"
-                // style={imageStyle}
-              />
-            </div>
-          </div>
-        </Link>
+        <h1 style={{ marginBottom: '4rem' }}>Products</h1>
       </div>
 
-      <div className={styles.wrapperProducts}>
-        <Link href="/products/profitecGo" data-test-id="profitecGO-0001">
-          <div className={styles.wrapperProduct}>
-            <div className={styles.wrapperProductInfo}>
-              <h2>Profitec Go</h2>
-              <h3>Our bestseller </h3>
-              <p> The Go is an outstanding price / value model.</p>
-              <p> lorem ipsum.</p>
-
-              {/* <button className={styles.buttonLearnMore}>Add to Cart</button> */}
-            </div>
-            <div>
-              <Image
-                src="/images/profitecgo/go-black.jpg"
-                width={473}
-                height={440}
-                alt="Picture of Profitec Go Black"
-                // style={imageStyle}
-              />
-            </div>
-          </div>
-        </Link>
+      <div>
+        <div className={styles.wrapperProducts}>
+          {productList.map((product) => (
+            <Link
+              href={`/products/${product.brand.replace(/\s+/g, '').toLowerCase()}-${product.model.replace(/\s+/g, '').toLowerCase()}`}
+              key={`products-${product.id}`}
+              data-test-id={`${product.model.replace(/\s+/g, '')}-${product.id}`}
+            >
+              <div className={styles.wrapperProduct}>
+                <div className={styles.wrapperProductInfo}>
+                  <h2
+                  // style={{
+                  //   display: 'flex',
+                  //   flexDirection: 'row',
+                  //   gap: '1rem',
+                  // }}
+                  >
+                    <span className={styles.brand}>{product.brand} </span>
+                    <span className={styles.model}>{product.model}</span>
+                  </h2>
+                  <h3>Price: ${product.price}</h3>
+                  <div className={styles.wrapperProductInfoText}>
+                    <p>{product.shortDescription}</p>
+                    <button className={styles.buttonLearnMore}>
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+                <div className={styles.imageSize}>
+                  <Image
+                    src={product.colors[0].image} // Display the first color's image
+                    objectFit="contain"
+                    fill
+                    alt={`Picture of ${product.model} in ${product.colors[0].name}`}
+                    style={
+                      product.model === 'Linea Micra' &&
+                      product.colors[0].name === 'Stainless Steel'
+                        ? { transform: 'scale(1.6)' } // 20% bigger
+                        : {}
+                    }
+                  />
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
+      <span style={{ marginBottom: '8rem' }} />
     </main>
   );
 }

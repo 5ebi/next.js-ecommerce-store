@@ -1,8 +1,11 @@
 const productList = [
   {
     id: 1,
-    model: 'Profitec Go',
+    brand: 'Profitec',
+    model: 'Go',
     price: 900,
+    shortDescription:
+      'A compact single boiler machine with quick heat-up and PID control, perfect for espresso enthusiasts.',
     colors: [
       { name: 'Black', image: '/images/profitecgo/go-black.jpg' },
       { name: 'Blue', image: '/images/profitecgo/go-blue.jpg' },
@@ -13,19 +16,25 @@ const productList = [
   },
   {
     id: 2,
-    model: 'La Marzocco Linea Micra',
+    brand: 'La Marzocco',
+    model: 'Linea Micra',
     price: 3500,
+    shortDescription:
+      'A compact home espresso machine offering professional-level performance and design.',
     colors: [
+      { name: 'Stainless Steel', image: '/images/lineamicra/micra-steel.jpg' },
       { name: 'Blue', image: '/images/lineamicra/micra-blue.jpg' },
       { name: 'Red', image: '/images/lineamicra/micra-red.jpg' },
-      { name: 'Stainless Steel', image: '/images/lineamicra/micra-steel.jpg' },
       { name: 'Yellow', image: '/images/lineamicra/micra-yellow.jpg' },
     ],
   },
   {
     id: 3,
-    model: 'Rocket Appartamento',
+    brand: 'Rocket',
+    model: 'Appartamento',
     price: 1400,
+    shortDescription:
+      'A stylish and compact heat-exchanger machine, perfect for those looking for café-quality at home.',
     colors: [
       {
         name: 'Copper',
@@ -44,8 +53,11 @@ const productList = [
   },
   {
     id: 4,
-    model: 'Gaggia Classic Evo',
+    brand: 'Gaggia',
+    model: 'Classic Evo',
     price: 450,
+    shortDescription:
+      'A beloved entry-level machine with a commercial-style brewing experience in a compact design.',
     colors: [
       { name: 'Green', image: '/images/gaggiaclassicevo/evo-green.jpg' },
       { name: 'Red', image: '/images/gaggiaclassicevo/evo-red.jpg' },
@@ -55,8 +67,11 @@ const productList = [
   },
   {
     id: 5,
-    model: 'Lelit Mara X',
+    brand: 'Lelit',
+    model: 'Mara X',
     price: 1250,
+    shortDescription:
+      'A compact heat-exchanger machine with stable temperature control and quick recovery times.',
     colors: [
       {
         name: 'Stainless Steel',

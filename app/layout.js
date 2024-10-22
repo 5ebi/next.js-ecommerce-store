@@ -4,8 +4,8 @@ import Header from './components/Header';
 
 export const metadata = {
   title: {
-    default: 'Siebträgerhop',
-    template: '%s | Siebträgershop',
+    default: 'coffee_lab',
+    template: '%s | Coffee_lab',
   },
 };
 

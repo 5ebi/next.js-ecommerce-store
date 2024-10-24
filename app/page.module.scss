@@ -27,9 +27,10 @@
   justify-self: center;
   margin: auto;
   border-radius: 10rem;
-  transition: ease 0.5s;
+  transition: 0.5s;
 }
 
 .button:hover {
-  padding: 2rem;
+  background-color: var(--swhite);
+  color: var(--sblack);
 }

@@ -28,6 +28,14 @@ export default async function Cart() {
     })
     .filter(Boolean); // Filter out any null values (in case the product isn't found)
 
+  const prices = price * cartItem.quantity;
+
+  const finalPrice = cart.reduce(sum);
+
+  function sum(accumulator, element) {
+    return accumulator + element;
+  }
+
   return (
     <main>
       <h1>Cart</h1>
@@ -64,7 +72,7 @@ export default async function Cart() {
           ))}
         </div>
       )}
-
+      <div>Total Amnount: ${finalPrice}</div>
       <Link className={styles.Checkout} href="/cart/checkout">
         Checkout
       </Link>
